@@ -11,11 +11,12 @@ import { ArticleCreationComponent } from './article-creation/article-creation.co
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { SingleArticleComponent } from './single-article/single-article.component';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
   { path: 'articles', component: ArticlesComponent },
-  { path: 'articles/:id', component: ArticleComponent },
+  { path: 'articles/:id', component: SingleArticleComponent },
   { path: '', component: ArticlesComponent }
 ];
 
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     AppComponent,
     ArticleComponent,
     ArticlesComponent,
-    ArticleCreationComponent
+    ArticleCreationComponent,
+    SingleArticleComponent
   ],
   imports: [
     RouterModule.forRoot(
