@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import{HttpClientModule} from '@angular/common/http'
 
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
@@ -12,6 +13,7 @@ import { ArticleCreationComponent } from './article-creation/article-creation.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SingleArticleComponent } from './single-article/single-article.component';
+import { FilterPipe } from './filter.pipe';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
@@ -26,7 +28,8 @@ const appRoutes: Routes = [
     ArticleComponent,
     ArticlesComponent,
     ArticleCreationComponent,
-    SingleArticleComponent
+    SingleArticleComponent,
+    FilterPipe
   ],
   imports: [
     RouterModule.forRoot(
@@ -35,7 +38,8 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ArticleService],
   bootstrap: [AppComponent]
