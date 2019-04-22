@@ -1,2 +1,2 @@
-<input type="text" placeholder="Search an article" [(ngModel)]="searchArticle" [ngModelOptions]="{standalone:true }">
+<input type="text" placeholder="Search an article by title or authors" [(ngModel)]="searchArticle" [ngModelOptions]="{standalone:true }">
 <app-article *ngFor="let article of articles | filter:searchArticle" [article]="article" (deletedArticle)="delete($event)"></app-article>
